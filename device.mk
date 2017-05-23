@@ -346,6 +346,10 @@ PRODUCT_COPY_FILES += \
      $(LOCAL_PATH)/configs/powerhint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.xml \
      $(LOCAL_PATH)/configs/perf/perfboostsconfig.xml:$(TARGET_COPY_OUT_VENDOR)/etc/perf/perfboostsconfig.xml
 
+# Releasetools script
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/check_features.sh:install/bin/check_features.sh
+
 # RIL
 PRODUCT_PACKAGES += \
     android.hardware.radio@1.2 \
