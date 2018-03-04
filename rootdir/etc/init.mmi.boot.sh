@@ -1,6 +1,6 @@
-#!/system/vendor/bin/sh
+#!/vendor/bin/sh
 
-PATH=/sbin:/system/vendor/bin
+PATH=/sbin:/vendor/bin
 export PATH
 
 scriptname=${0##*/}
@@ -42,5 +42,3 @@ if [ -f /sys/devices/soc0/select_image ]; then
     echo $image_variant > /sys/devices/soc0/image_variant
     echo $oem_version > /sys/devices/soc0/image_crm_version
 fi
-
-
