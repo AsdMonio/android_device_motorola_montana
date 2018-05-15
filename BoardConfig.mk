@@ -186,6 +186,9 @@ BOARD_CACHEIMAGE_PARTITION_SIZE := 268435456      #   262144 * 1024 mmcblk0p52
 #BOARD_RECOVERYIMAGE_PARTITION_SIZE := 16777216    #    16384 * 1024 mmcblk0p38
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 3623878656    #  3538944 * 1024 mmcblk0p53
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 26306674688 # 25690112 * 1024 mmcblk0p54
+BOARD_VENDORIMAGE_PARTITION_SIZE := 687865856     #   671744 * 1024 mmckbl0p51
+BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
+TARGET_COPY_OUT_VENDOR := vendor
 
 BOARD_ROOT_EXTRA_SYMLINKS := \
     /mnt/vendor/persist:/persist \
@@ -223,17 +226,20 @@ TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)/releasetools
 
 # SELinux
 include device/qcom/sepolicy-legacy-um/sepolicy.mk
-BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
+BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 
 # Shim
 TARGET_LD_SHIM_LIBS := \
-    /system/vendor/bin/adspd|libshim_adsp.so \
-    /system/vendor/lib64/libmdmcutback.so|libqsap_shim.so \
-    /system/vendor/lib/libjustshoot.so|libjustshoot_shim.so \
-    /system/vendor/lib/libmot_gpu_mapper.so|libgpu_mapper_shim.so
+    /vendor/bin/adspd|libshim_adsp.so \
+    /vendor/lib64/libmdmcutback.so|libqsap_shim.so \
+    /vendor/lib/libjustshoot.so|libjustshoot_shim.so \
+    /vendor/lib/libmot_gpu_mapper.so|libgpu_mapper_shim.so
 
 # Security patch level
 VENDOR_SECURITY_PATCH := 2018-10-01
+
+# Treble
+PRODUCT_FULL_TREBLE_OVERRIDE := true
 
 # VNDK
 PRODUCT_USE_VNDK_OVERRIDE := false
