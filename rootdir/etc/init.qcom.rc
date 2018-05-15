@@ -495,7 +495,7 @@ service vendor.qseeproxydaemon /vendor/bin/qseeproxydaemon
     group system
     writepid /dev/cpuset/system-background/tasks
 
-service vendor.wcnss-service /system/vendor/bin/wcnss_service
+service vendor.wcnss-service /vendor/bin/wcnss_service
     class main
     user system
     group system wifi radio
@@ -558,7 +558,7 @@ service vendor.rmt_storage /vendor/bin/rmt_storage
     shutdown critical
     writepid /dev/cpuset/system-background/tasks
 
-service hciattach system/vendor/bin/hci_qcomm_init -e
+service hciattach /vendor/bin/hci_qcomm_init -e
     class late_start
     user bluetooth
     group bluetooth net_bt_admin
