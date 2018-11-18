@@ -319,6 +319,11 @@ PRODUCT_PACKAGES += \
     com.android.nfc_extras \
     android.hardware.nfc@1.1-service
 
+# NFC Configs
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/nfc/libnfc-nci.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nci.conf \
+    $(LOCAL_PATH)/configs/nfc/libnfc-nxp.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nxp.conf
+
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power@1.2-service
