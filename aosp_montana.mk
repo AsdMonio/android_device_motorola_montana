@@ -28,6 +28,7 @@ $(call inherit-product, vendor/aosp/config/common_full_phone.mk)
 # Boot animation
 TARGET_SCREEN_WIDTH := 1080
 TARGET_SCREEN_HEIGHT := 1920
+TARGET_BOOT_ANIMATION_RES := 1080
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := montana
@@ -43,6 +44,9 @@ PRODUCT_SYSTEM_PROPERTY_BLACKLIST := ro.product.model
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME="Moto G5s"
+
+# GApps architecture
+TARGET_GAPPS_ARCH := arm64
 
 # for specific
 $(call inherit-product, vendor/motorola/montana/montana-vendor.mk)
