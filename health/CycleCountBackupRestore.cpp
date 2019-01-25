@@ -16,8 +16,8 @@
 
 #include "CycleCountBackupRestore.h"
 namespace device {
-namespace xiaomi {
-namespace mido {
+namespace motorola {
+namespace montana {
 namespace health {
 
 static constexpr char kCycCntFile[] = "sys/class/power_supply/bms/device/cycle_counts_bins";
@@ -106,6 +106,6 @@ static constexpr int kBuffSize = 256;
 }
 
 } // namespace health
-} // namespace mido
-} // namespace xiaomi
+} // namespace montana
+} // namespace motorola
 } // namespace device
