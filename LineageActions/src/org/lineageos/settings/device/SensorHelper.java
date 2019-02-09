@@ -37,6 +37,7 @@ public class SensorHelper {
     private static final int SENSOR_TYPE_MMI_FLAT_UP = 65537;
     private static final int SENSOR_TYPE_MMI_FLAT_DOWN = 65538;
     private static final int SENSOR_TYPE_MMI_STOW = 65539;
+    private static final int SENSOR_TYPE_GLANCE_GESTURE = 65548;
 
     private static final int BATCH_LATENCY_IN_MS = 100;
 
@@ -82,7 +83,7 @@ public class SensorHelper {
     }
 
     public Sensor getGlanceSensor() {
-        return mSensorManager.getDefaultSensor(Sensor.TYPE_GLANCE_GESTURE, true);
+        return mSensorManager.getDefaultSensor(SENSOR_TYPE_GLANCE_GESTURE, true);
     }
 
     public Sensor getProximitySensor() {
