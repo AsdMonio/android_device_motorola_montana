@@ -228,13 +228,6 @@ TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)/releasetools
 include device/qcom/sepolicy-legacy-um/sepolicy.mk
 BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 
-# Shim
-TARGET_LD_SHIM_LIBS := \
-    /vendor/bin/adspd|libshim_adsp.so \
-    /vendor/lib64/libmdmcutback.so|libqsap_shim.so \
-    /vendor/lib/libjustshoot.so|libjustshoot_shim.so \
-    /vendor/lib/libmot_gpu_mapper.so|libgpu_mapper_shim.so
-
 # Security patch level
 VENDOR_SECURITY_PATCH := 2018-10-01
 
