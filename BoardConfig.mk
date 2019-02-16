@@ -235,14 +235,6 @@ include device/qcom/sepolicy/sepolicy.mk
 # Treble
 PRODUCT_FULL_TREBLE_OVERRIDE := true
 
-# Shim
-TARGET_LD_SHIM_LIBS := \
-    /vendor/bin/adspd|libshim_adsp.so \
-    /vendor/lib/libmot_gpu_mapper.so|libgpu_mapper_shim.so \
-    /system/lib/libjustshoot.so|libjustshoot_shim.so \
-    /vendor/lib/libjustshoot.so|libjustshoot_shim.so \
-    /vendor/lib64/libmdmcutback.so|libqsap_shim.so
-
 # Thermal
 USE_DEVICE_SPECIFIC_THERMAL := true
 
