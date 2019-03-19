@@ -25,8 +25,7 @@ $(call inherit-product, device/motorola/montana/system_prop.mk)
 
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-lineage
+    $(LOCAL_PATH)/overlay
 
 # These are the hardware-specific features
 PRODUCT_COPY_FILES += \

@@ -1,0 +1,14 @@
+[
+  {
+    "repository":  "android_kernel_motorola_msm8953-common",
+    "target_path": "kernel/motorola/msm8953-common"
+  },
+  {
+    "repository": "android_device_qcom_common",
+    "target_path": "device/qcom/common"
+  },
+  {
+    "repository": "android_packages_resources_MotoActions",
+    "target_path": "packages/resources/MotoActions"
+  }
+]
