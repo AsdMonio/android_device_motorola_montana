@@ -139,7 +139,6 @@
 /system/vendor/radio(/.*)? u:object_r:radio_data_file:s0
 
 /system/vendor/bin/qmi_motext_hook u:object_r:rild_exec:s0
-/system/vendor/bin/msm_irqbalance u:r:msm_irqbalanced:s0
 
 /sys/kernel/debug/rmt_storage(/.*)? u:object_r:debugfs_rmt_storage:s0
 

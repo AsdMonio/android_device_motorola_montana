@@ -1,2 +1,0 @@
-type msm_irqbalanced;
-allow msm_irqbalanced msm_irqbalanced:capability {dac_override} 
