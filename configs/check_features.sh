@@ -2,6 +2,7 @@
 
 sku=`getprop ro.boot.hardware.sku`
 device=`getprop ro.boot.device`
+radio=`getprop ro.boot.radio`
 
 remove_nfc() {
     rm /system/vendor/etc/permissions/android.hardware.nfc.xml
@@ -10,12 +11,12 @@ remove_nfc() {
     rm -r /system/app/NfcNci
 }
 
-if [ "$sku" == "XT1687" ] || [ "$device" = "cedric" ]; then
+if [ "$sku" == "XT1687" ] || [ "$device" == "cedric" ]; then
     # XT1687 and cedric don't have NFC chips
     remove_nfc
 fi
 
-if [ "$device" = "montana" ]; then
+if [ "$device" == "montana" ]; then
     if [ "$radio" != "EMEA" ] && [ "$radio" != "APAC" ]; then
         # On montana only EMEA and APAC radio models have NFC
         remove_nfc
