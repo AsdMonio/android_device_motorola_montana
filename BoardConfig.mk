@@ -238,6 +238,9 @@ TARGET_LD_SHIM_LIBS := \
 # Thermal
 USE_DEVICE_SPECIFIC_THERMAL := true
 
+# Wlan
+PRODUCT_VENDOR_MOVE_ENABLED      := true
+
 # Wifi
 BOARD_HAS_QCOM_WLAN              := true
 BOARD_HAS_QCOM_WLAN_SDK          := true
