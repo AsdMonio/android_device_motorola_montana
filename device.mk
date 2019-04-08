@@ -206,11 +206,16 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/gps/etc/xtwifi.conf:system/vendor/etc/xtwifi.conf \
     $(LOCAL_PATH)/gps/etc/cacert_location.pem:system/vendor/etc/cacert_location.pem
 
-# health
+# Health
 PRODUCT_PACKAGES += \
     android.hardware.health@1.0-convert \
     android.hardware.health@1.0-impl \
     android.hardware.health@1.0-service
+
+# HIDL
+PRODUCT_PACKAGES += \
+    android.hidl.base@1.0 \
+    android.hidl.manager@1.0
 
 # IRSC
 PRODUCT_COPY_FILES += \
@@ -233,6 +238,14 @@ PRODUCT_PACKAGES += \
 # IDC
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/idc/uinput-fpc.idc:system/usr/idc/uinput-fpc.idc
+
+# IMS
+PRODUCT_PACKAGES += \
+    ims-ext-common \
+    telephony-ext
+
+PRODUCT_BOOT_JARS += \
+    telephony-ext
 
 # Lights
 PRODUCT_PACKAGES += \
@@ -334,43 +347,40 @@ PRODUCT_COPY_FILES += \
 
 # RIL
 PRODUCT_PACKAGES += \
+    android.hardware.radio@1.0 \
     librmnetctl \
     libprotobuf-cpp-full \
     libxml2
-
-#RIL
-PRODUCT_PACKAGES += \
-    android.hardware.radio@1.0
 
 # Seccomp policy
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/seccomp_policy/mediacodec.policy:system/vendor/etc/seccomp_policy/mediacodec.policy \
     $(LOCAL_PATH)/seccomp_policy/mediaextractor.policy:system/vendor/etc/seccomp_policy/mediaextractor.policy
 
-# IMS
-PRODUCT_PACKAGES += \
-    ims-ext-common \
-    telephony-ext
-
-PRODUCT_BOOT_JARS += \
-    telephony-ext
-
 # Shims
 PRODUCT_PACKAGES += \
     libqsap_shim
 
 # Sensors
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/sensors/hals.conf:system/vendor/etc/sensors/hals.conf \
-    $(LOCAL_PATH)/configs/sensors/sensor_def_qcomdev.conf:system/vendor/etc/sensors/sensor_def_qcomdev.conf
-
 PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl \
     android.hardware.sensors@1.0-service
 
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/sensors/hals.conf:system/vendor/etc/sensors/hals.conf \
+    $(LOCAL_PATH)/configs/sensors/sensor_def_qcomdev.conf:system/vendor/etc/sensors/sensor_def_qcomdev.conf
+
 # TextClassifier smart selection model files
 PRODUCT_PACKAGES += \
     textclassifier.smartselection.bundle1
+
+# Thermal
+PRODUCT_PACKAGES += \
+    android.hardware.thermal@1.0-impl \
+    android.hardware.thermal@1.0-service \
+    thermal.msm8937
+
+PRODUCT_COPY_FILES += $(LOCAL_PATH)/configs/thermal-engine-montana.conf:system/vendor/etc/thermal-engine.conf
 
 # USB HAL
 PRODUCT_PACKAGES += \
@@ -397,12 +407,6 @@ PRODUCT_PACKAGES += \
     wpa_supplicant \
     wpa_supplicant.conf
 
-# Thermal
-PRODUCT_PACKAGES += \
-    android.hardware.thermal@1.0-impl \
-    android.hardware.thermal@1.0-service \
-    thermal.msm8937
-
 PRODUCT_PACKAGES += \
     libcurl \
     libQWiFiSoftApCfg \
@@ -411,8 +415,6 @@ PRODUCT_PACKAGES += \
     tcpdump \
     wcnss_service \
     libwpa_client
-
-PRODUCT_COPY_FILES += $(LOCAL_PATH)/configs/thermal-engine-montana.conf:system/vendor/etc/thermal-engine.conf
 
 # Wifi Symlinks
 PRODUCT_PACKAGES += \
@@ -428,11 +430,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
     $(LOCAL_PATH)/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/firmware/wlan/prima/WCNSS_qcom_cfg.ini
-
-# TEMP FIX
-PRODUCT_PACKAGES += \
-    android.hidl.base@1.0 \
-    android.hidl.manager@1.0
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
