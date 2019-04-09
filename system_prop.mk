@@ -223,7 +223,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.data.qmi.adb_logmask=0 \
     persist.data.netmgrd.qos.enable=true \
     persist.data.mode=concurrent \
-    persist.data.iwlan.enable=true
+    persist.data.iwlan.enable=true \
+    persist.dbg.wfc_avail_ovr=1
 
 # RmNet Data
 PRODUCT_PROPERTY_OVERRIDES += \
