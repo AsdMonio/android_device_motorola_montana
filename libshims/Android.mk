@@ -23,6 +23,7 @@ LOCAL_C_INCLUDES := external/tinyalsa/include
 LOCAL_SRC_FILES := mixer.c
 LOCAL_MODULE := libshim_adsp
 LOCAL_MODULE_TAGS := optional
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
