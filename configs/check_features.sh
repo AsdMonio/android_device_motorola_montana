@@ -1,7 +1,5 @@
 #!/sbin/sh
 
-sku=`getprop ro.boot.hardware.sku`
-
 remove_nfc() {
     rm /system/vendor/etc/permissions/android.hardware.nfc.xml
     rm /system/vendor/etc/permissions/android.hardware.nfc.hce.xml
@@ -9,7 +7,7 @@ remove_nfc() {
     rm -r /system/app/NfcNci
 }
 
-if [ "$sku" == "XT1790" ]  || [ "$sku" == "XT1792" ] || [ "$sku" == "XT1795" ]; then
+if [ $(getprop ro.boot.hardware.sku) == "XT1790" ]  || [ $(getprop ro.boot.hardware.sku) == "XT1792" ] || [ $(getprop ro.boot.hardware.sku) == "XT1795" ]; then
     # XT1790, XT1792 and XT1795 don't have NFC
     remove_nfc
 fi
@@ -24,7 +22,7 @@ rm /system/vendor/lib64/libdtvhal.so
 rm -r /system/vendor/app/DTVPlayer
 rm -r /system/vendor/app/DTVService
 
-if [ "$sku" != "XT1790" ] || [ "$sku" != "XT1792" ] || [ "$sku" != "XT1795" ]; then
+if [ $(getprop ro.boot.hardware.sku) != "XT1790" ] || [ $(getprop ro.boot.hardware.sku) != "XT1792" ] || [ $(getprop ro.boot.hardware.sku) != "XT1795" ]; then
     # XT1790,XT1792 and XT1795 have a compass
     rm /system/vendor/etc/permissions/android.hardware.sensor.compass.xml
 fi
