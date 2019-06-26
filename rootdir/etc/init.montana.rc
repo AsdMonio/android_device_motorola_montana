@@ -25,6 +25,16 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
+on property:ro.boot.radio=EMEA && on property:ro.boot.radio=APAC
+    # NFC & e-compass
+    setprop ro.hw.nfc true
+    setprop ro.hw.ecompass false
+
+on property:ro.boot.radio=Brazil
+    # NFC & e-compass
+    setprop ro.hw.nfc false
+    setprop ro.hw.ecompass true
+
 on property:sys.boot_completed=1
     # Enable ZRAM on boot_complete
     swapon_all /system/vendor/etc/fstab.qcom
