@@ -1,7 +1,7 @@
 cc_binary {
     name: "android.hardware.health@2.0-service.montana",
     init_rc: ["android.hardware.health@2.0-service.montana.rc"],
-    proprietary: true,
+    vendor: true,
     relative_install_path: "hw",
     srcs: [
         "HealthServiceDefault.cpp",
@@ -36,4 +36,3 @@ cc_binary {
     ],
     header_libs: ["libhealthd_headers"],
 }
-
