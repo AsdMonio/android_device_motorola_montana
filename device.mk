@@ -116,6 +116,7 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.camera.device@1.0 \
     vendor.qti.hardware.camera.device@1.0_vendor \
     libjustshoot_shim \
+    libppeiscore_shim \
     libgui_vendor
 
 # Camera Configurations
