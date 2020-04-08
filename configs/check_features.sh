@@ -1,15 +1,11 @@
 #!/sbin/sh
 
-remove_nfc() {
+if [ $(getprop ro.boot.hardware.sku) == "XT1790" ]  || [ $(getprop ro.boot.hardware.sku) == "XT1792" ] || [ $(getprop ro.boot.hardware.sku) == "XT1795" ]; then
+    # XT1790, XT1792 and XT1795 don't have NFC
     rm /vendor/etc/permissions/android.hardware.nfc.xml
     rm /vendor/etc/permissions/android.hardware.nfc.hce.xml
     rm /vendor/etc/permissions/com.android.nfc_extras.xml
     rm -r /vendor/app/NfcNci
-}
-
-if [ $(getprop ro.boot.hardware.sku) == "XT1790" ]  || [ $(getprop ro.boot.hardware.sku) == "XT1792" ] || [ $(getprop ro.boot.hardware.sku) == "XT1795" ]; then
-    # XT1790, XT1792 and XT1795 don't have NFC
-    remove_nfc
 fi
 
 # Remove DTB stuff
