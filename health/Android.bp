@@ -1,6 +1,6 @@
 cc_binary {
-    name: "android.hardware.health@2.0-service.cedric",
-    init_rc: ["android.hardware.health@2.0-service.cedric.rc"],
+    name: "android.hardware.health@2.0-service.montana",
+    init_rc: ["android.hardware.health@2.0-service.montana.rc"],
     proprietary: true,
     relative_install_path: "hw",
     srcs: [

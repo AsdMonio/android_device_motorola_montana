@@ -15,9 +15,9 @@
 //
 
 cc_library_static {
-    name: "libinit_cedric",
+    name: "libinit_montana",
     recovery_available: true,
-    srcs: ["init_cedric.cpp"],
+    srcs: ["init_montana.cpp"],
     include_dirs: [
         "system/core/base/include",
         "system/core/init"

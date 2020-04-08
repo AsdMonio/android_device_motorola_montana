@@ -1,4 +1,4 @@
-# Proprietary Blobs for Cedric
+# Proprietary Blobs for Montana
 
 -app/QtiTelephonyService/QtiTelephonyService.apk
 -framework/WfdCommon.jar

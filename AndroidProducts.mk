@@ -14,9 +14,9 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_cedric.mk
+    $(LOCAL_DIR)/lineage_montana.mk
 
 COMMON_LUNCH_CHOICES := \
-    lineage_cedric-user \
-    lineage_cedric-userdebug \
-    lineage_cedric-eng
+    lineage_montana-user \
+    lineage_montana-userdebug \
+    lineage_montana-eng

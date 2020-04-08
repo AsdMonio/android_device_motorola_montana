@@ -22,7 +22,7 @@ DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay-lineage
 
 # Soong namespaces
-PRODUCT_SOONG_NAMESPACES += device/motorola/cedric
+PRODUCT_SOONG_NAMESPACES += device/motorola/montana
 
 # These are the hardware-specific features
 PRODUCT_COPY_FILES += \
@@ -227,7 +227,7 @@ PRODUCT_PACKAGES += \
 
 # health
 PRODUCT_PACKAGES += \
-    android.hardware.health@2.0-service.cedric
+    android.hardware.health@2.0-service.montana
 
 # IPACM
 PRODUCT_PACKAGES += \
@@ -259,7 +259,7 @@ PRODUCT_PACKAGES += \
 # Lights
 PRODUCT_PACKAGES += \
     android.hardware.light@2.0-impl \
-    android.hardware.light@2.0-service.cedric
+    android.hardware.light@2.0-service.montana
 
 # Display Calibration
 PRODUCT_PACKAGES += \
@@ -335,7 +335,7 @@ PRODUCT_PACKAGES += \
     init.mmi.boot.sh \
     init.mmi.laser.sh \
     init.mmi.rc \
-    init.cedric.rc \
+    init.montana.rc \
     init.mmi.usb.rc \
     init.qcom.rc \
     init.qcom.ril.sh \
@@ -401,7 +401,7 @@ PRODUCT_COPY_FILES += \
 
 # Touch HAL
 PRODUCT_PACKAGES += \
-    vendor.lineage.touch@1.0-service.cedric
+    vendor.lineage.touch@1.0-service.montana
 
 # TextClassifier smart selection model files
 PRODUCT_PACKAGES += \
@@ -417,7 +417,7 @@ PRODUCT_COPY_FILES += \
 # Vibrator
 PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.0-impl \
-    android.hardware.vibrator@1.0-service.cedric
+    android.hardware.vibrator@1.0-service.montana
 
 PRODUCT_PACKAGES += \
     vndk-sp

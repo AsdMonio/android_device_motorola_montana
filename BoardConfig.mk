@@ -14,9 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
--include vendor/motorola/cedric/BoardConfigVendor.mk
+-include vendor/motorola/montana/BoardConfigVendor.mk
 
-DEVICE_PATH := device/motorola/cedric
+DEVICE_PATH := device/motorola/montana
 
 TARGET_SPECIFIC_HEADER_PATH := $(DEVICE_PATH)/include
 
@@ -57,7 +57,7 @@ TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a53
 TARGET_USES_64_BIT_BINDER := true
 
 # Asserts
-TARGET_OTA_ASSERT_DEVICE := cedric,cedric_retail
+TARGET_OTA_ASSERT_DEVICE := montana,montana_retail
 
 # Enable dexpreopt to speed boot time
 WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY := true
@@ -83,7 +83,7 @@ BOARD_KERNEL_SEPARATED_DT := true
 BOARD_DTBTOOL_ARGS := --force-v3
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
-TARGET_KERNEL_CONFIG := cedric_defconfig
+TARGET_KERNEL_CONFIG := montana_defconfig
 TARGET_KERNEL_SOURCE := kernel/motorola/msm8937
 KERNEL_TOOLCHAIN := $(PWD)/prebuilts/gcc/$(HOST_OS)-x86/aarch64/aarch64-linux-android-4.9/bin
 
@@ -161,8 +161,8 @@ TARGET_EXFAT_DRIVER := exfat
 BOARD_HAVE_QCOM_FM := true
 
 # Init
-TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_cedric
-TARGET_RECOVERY_DEVICE_MODULES := //$(DEVICE_PATH):libinit_cedric
+TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_montana
+TARGET_RECOVERY_DEVICE_MODULES := //$(DEVICE_PATH):libinit_montana
 
 # Keymaster
 TARGET_PROVIDES_KEYMASTER := true

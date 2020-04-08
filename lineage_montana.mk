@@ -16,7 +16,7 @@
 
 
 # Inherit from those products. Most specific first.
-$(call inherit-product, device/motorola/cedric/full_cedric.mk)
+$(call inherit-product, device/motorola/montana/full_montana.mk)
 
 # Inherit some common CM stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
@@ -26,8 +26,8 @@ TARGET_SCREEN_WIDTH := 1080
 TARGET_SCREEN_HEIGHT := 1920
 
 ## Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := cedric
-PRODUCT_NAME := lineage_cedric
+PRODUCT_DEVICE := montana
+PRODUCT_NAME := lineage_montana
 PRODUCT_BRAND := motorola
 PRODUCT_MANUFACTURER := motorola
 
@@ -35,7 +35,7 @@ PRODUCT_ENFORCE_RRO_TARGETS := \
     framework-res
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="cedric-user 8.1.0 OPPS28.85-13-2 d04a4 release-keys"
+    PRIVATE_BUILD_DESC="montana_retail-user 8.1.0 OPPS28.65-37-7-11 7f8a6 release-keys"
 
 # Set BUILD_FINGERPRINT variable to be picked up by both system and vendor build.prop
-BUILD_FINGERPRINT := motorola/cedric/cedric:8.1.0/OPPS28.85-13-2/d04a4:user/release-keys
+BUILD_FINGERPRINT := motorola/montana_retail/montana:8.1.0/OPPS28.65-37-7-11/7f8a6:user/release-keys

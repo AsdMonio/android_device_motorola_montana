@@ -26,7 +26,7 @@
 #
 
 import /vendor/etc/init/hw/init.mmi.rc
-import /vendor/etc/init/hw/init.cedric.rc
+import /vendor/etc/init/hw/init.montana.rc
 
 on early-init
     mount debugfs debugfs /sys/kernel/debug

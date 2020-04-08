@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#define LOG_TAG "vendor.lineage.touch@1.0-service.cedric"
+#define LOG_TAG "vendor.lineage.touch@1.0-service.montana"
 
 #include <android-base/logging.h>
 #include <binder/ProcessState.h>

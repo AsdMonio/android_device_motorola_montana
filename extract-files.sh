@@ -18,7 +18,7 @@
 
 set -e
 
-DEVICE=cedric
+DEVICE=montana
 VENDOR=motorola
 
 # Load extract_utils and do some sanity checks
