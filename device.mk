@@ -386,14 +386,7 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl \
-    android.hardware.sensors@1.0-service \
-    libsensorhub \
-    motosh \
-    sensorhub.msm8937 \
-    sensors.msm8937 \
-    sensors.rp \
-    sensors.tof \
-    sensors.tof.vl53l0
+    android.hardware.sensors@1.0-service
 
 # Trust HAL
 PRODUCT_PACKAGES += \
