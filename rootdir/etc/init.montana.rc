@@ -25,7 +25,12 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
-on property:ro.boot.radio=EMEA && on property:ro.boot.radio=APAC
+on property:ro.boot.radio=EMEA
+    # NFC & e-compass
+    setprop ro.hw.nfc true
+    setprop ro.hw.ecompass false
+
+on property:ro.boot.radio=APAC
     # NFC & e-compass
     setprop ro.hw.nfc true
     setprop ro.hw.ecompass false
