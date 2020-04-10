@@ -50,3 +50,9 @@ on property:ro.boot.ram=2GB
 
 on property:ro.boot.ram=3GB
     write /sys/block/zram0/disksize 805306368
+
+# Montana uses qcom sensor service
+service sensors /vendor/bin/sensors.qti
+    class core
+    user root
+    group root
