@@ -87,6 +87,7 @@
             <instance>default</instance>
         </interface>
     </hal>
+    <!--
     <hal format="hidl">
         <name>com.qualcomm.qti.wifidisplayhal</name>
         <transport>hwbinder</transport>
@@ -100,6 +101,7 @@
             <instance>wifidisplayhdcphal</instance>
         </interface>
     </hal>
+    -->
     <hal format="native" optional="false">
         <name>netutils-wrapper</name>
         <!--
