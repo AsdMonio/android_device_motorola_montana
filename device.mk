@@ -307,6 +307,18 @@ PRODUCT_PACKAGES += \
     libandroid_net \
     libandroid_net_32
 
+# NFC
+PRODUCT_PACKAGES += \
+    libnfc \
+    com.android.nfc_extras \
+    NfcNci \
+    nqnfcee_access.xml \
+    nqnfcse_access.xml \
+    SecureElement \
+    Tag \
+    com.android.nfc_extras \
+    android.hardware.nfc@1.1-service
+
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power@1.2-service
