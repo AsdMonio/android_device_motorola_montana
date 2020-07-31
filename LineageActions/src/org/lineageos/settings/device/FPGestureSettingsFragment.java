@@ -29,9 +29,12 @@ import android.view.ViewGroup;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.TextView;
+import androidx.preference.Preference;
 import androidx.preference.PreferenceCategory;
 import androidx.preference.SwitchPreference;
 import androidx.preference.PreferenceFragment;
+
+import lineageos.providers.LineageSettings;
 
 import org.lineageos.settings.device.actions.Constants;
 
@@ -41,6 +44,7 @@ import static org.lineageos.settings.device.actions.Constants.FP_HOME_KEY_OFF;
 public class FPGestureSettingsFragment extends PreferenceFragment {
 
     private SwitchPreference mFPScreenOffGesture;
+    private SwitchPreference mFPDisableNavbar;
     private PreferenceCategory mFPScreenOffCategory;
     private PreferenceCategory mFPScreenOnCategory;
 
@@ -87,8 +91,14 @@ public class FPGestureSettingsFragment extends PreferenceFragment {
     private void updatePrefs(boolean enabled){
         Editor prefEditor = PreferenceManager.getDefaultSharedPreferences(getActivity()).edit();
         prefEditor.putBoolean(FP_HOME_KEY, enabled);
+        if (!enabled) {
+            prefEditor.putBoolean("fp_disable_navbar", false);
+            LineageSettings.System.putInt(getActivity().getContentResolver(), "force_show_navbar", 1);
+            mFPDisableNavbar.setChecked(false);
+        }
         prefEditor.apply();
         mFPScreenOnCategory.setEnabled(enabled);
+        mFPDisableNavbar.setEnabled(enabled);
         mFPScreenOffGesture.setEnabled(enabled);
         mFPScreenOffCategory.setEnabled(enabled);
         if(enabled){
@@ -106,6 +116,14 @@ public class FPGestureSettingsFragment extends PreferenceFragment {
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         addPreferencesFromResource(R.xml.fp_gesture_panel);
         mFPScreenOffGesture = (SwitchPreference) findPreference(FP_HOME_KEY_OFF);
+        mFPDisableNavbar = (SwitchPreference) findPreference("fp_disable_navbar");
+        mFPDisableNavbar.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
+            @Override
+            public boolean onPreferenceChange(Preference preference, Object newValue) {
+                LineageSettings.System.putInt(getActivity().getContentResolver(), "force_show_navbar", Boolean.valueOf(newValue.toString()) ? 0 : 1);
+                return true;
+            }
+        });
         mFPScreenOffCategory = (PreferenceCategory) findPreference("fp_keys_scr_off");
         mFPScreenOnCategory = (PreferenceCategory) findPreference("fp_keys_scr_on");
         updatePrefs(isFPGestureEnabled());

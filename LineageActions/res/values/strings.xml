@@ -30,6 +30,8 @@
     <string name="fingerprint_gestures_title">Fingerprint gestures</string>
     <string name="fingerprint_gestures_summary">Use fingerprint gestures</string>
     <string name="fingerprint_gestures_manage_summary">Manage fingerprint gestures</string>
+    <string name="fingerprint_disable_navbar">Hide navbar</string>
+    <string name="fingerprint_disable_navbar_summary">Disable the on-screen system navigation.\n\nOnly enable this if you have set up navigation with fingerprint gestures correctly, otherwise you may get stuck!</string>
     <string name="fingerprint_actions_screenon">Actions with screen on</string>
     <string name="fingerprint_tap_title">Single tap</string>
     <string name="fingerprint_tap_dlg_title">Select action for single tap</string>

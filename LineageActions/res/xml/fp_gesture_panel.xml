@@ -22,6 +22,12 @@
         android:icon="@drawable/ic_fingerprint"
         android:summary="@string/fingerprint_gestures_screenoff_summary" />
 
+    <SwitchPreference
+        android:key="fp_disable_navbar"
+        android:enabled="false"
+        android:title="@string/fingerprint_disable_navbar"
+        android:summary="@string/fingerprint_disable_navbar_summary" />
+
     <PreferenceCategory
         android:key="fp_keys_scr_on"
         android:title="@string/fingerprint_actions_screenon" >
