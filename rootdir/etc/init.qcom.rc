@@ -506,13 +506,6 @@ service vendor.adsprpcd /vendor/bin/adsprpcd
     user media
     group media
 
-# Start AKM executable
-service ecompassd /vendor/bin/akmd09912
-    class main
-    user compass
-    group compass misc input
-    disabled
-
 service vendor.irsc_util /vendor/bin/irsc_util "/vendor/etc/sec_config"
     class core
     user root
@@ -614,9 +607,6 @@ on property:init.svc.vendor.per_mgr=running
 on property:sys.shutdown.requested=*
     stop vendor.per_proxy
     stop vendor.ims_rtp_daemon
-
-on property:ro.hw.ecompass=true
-    enable ecompassd
 
 service vendor.netmgrd /vendor/bin/netmgrd
     class main
